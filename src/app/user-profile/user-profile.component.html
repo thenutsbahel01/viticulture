@@ -1,0 +1,442 @@
+<!-- Author: Anshu, Date: April 17, 20 
+     Description: Styles related to the prediction form
+-->
+
+<style>
+  .row {
+    margin-bottom: 20px;
+  }
+</style>
+
+<div class="panel-header panel-header-sm">
+</div>
+
+<!-- Author: Abhishek Sarkar
+     Date: 16-04-2020
+    Module: Heart Attack Predictor Form-->
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title" style="color:#5781ff;">Heart Attack Predictor</h5>
+        </div>
+        <div class="card-body">
+
+          <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+
+            <!-- TODO: Add a tootip for Age  -->
+            <!-- TODO: Change the input type of age to a number field -->
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>What's your age?</label>
+                  <input type="text" name="age" class="form-control" placeholder="32">
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label class="col-form-label">Gender</label>
+                  <div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" type="radio" name="genderMale" id="genderMale" value="male"
+                        checked>
+                      <label class="custom-control-label" for="genRadio1">
+                        Male
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" type="radio" name="gender" id="genderFemale" value="female">
+                      <label class="custom-control-label" for="genderFemale">
+                        Female
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label class="col-form-label">Do you experience chest pain?</label>
+                  <div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" name="" type="radio" name="chestRadios" id="chestRadio1"
+                        value="0" checked>
+                      <label class="custom-control-label" for="chestRadio1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" name="" type="radio" name="chestRadios" id="chestRadio2"
+                        value="1">
+                      <label class="custom-control-label" for="chestRadio2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>
+                    Blood Pressure level
+                    <!-- TODO: Add Tooltip for the Blood Pressure -->
+                     <span class="badge badge-pill badge-secondary" ngbTooltip="BP is measured in units of mercury i.e mm/Hg" >i</span>
+                  </label>
+   
+                  <input type="text" class="form-control" name="" placeholder="110" value="">
+                </div>
+              </div>
+            </div>
+
+            <!-- 2nd row -->
+            <div class="row">
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>Cholesterol level
+                      <span class="badge badge-pill badge-secondary" ngbTooltip="Cholesterol is a waxy substance found in blood. body needs cholesterol to build healthy cells, but high levels of cholesterol can increase risk of heart disease. With high cholesterol, can develop fatty deposits in blood vessels and it can be measured in mg/dL" >i</span>
+                    
+                  </label>
+                  <input type="text" class="form-control" name="" placeholder="140" value="">
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>Fasting blood sugar level
+                      <span class="badge badge-pill badge-secondary" ngbTooltip="A test to determine how much glucose (sugar) is in a blood sample after an overnight fast. For example, 100 mg/dl" >i</span>
+                  </label>
+                  <input type="text" class="form-control" name="" placeholder="140" value="">
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                    <label class="col-form-label  pt-0">Resting electrocardiograph?
+                        <span class="badge badge-pill badge-secondary" ngbTooltip="The resting electrocardiogram is a test that measures the electrical activity of the heart." >i</span>
+                      </label> 
+                  <div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" name="" type="radio" name="restRadios" id="restRadio1" value="1">
+                      <label class="custom-control-label" for="restRadio1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" name="" type="radio" name="restRadios" id="restRadio2"
+                        value="0" checked>
+                      <label class="custom-control-label" for="restRadio2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>Maximum heart rate achieved
+                      <span class="badge badge-pill badge-secondary" ngbTooltip="MHR refers to the fastest rate at which your heart will beat in one minute. Formula, 206.9 - (0.67 x age)" placement="left">i</span>
+                  </label>
+                  <input type="text" class="form-control" name="" placeholder="85" value="">
+                </div>
+              </div>
+            </div>
+
+            <!-- 3rd row -->
+            <div class="row">
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                    <label class="col-form-label  pt-0">Exercise include angina
+                        <span class="badge badge-pill badge-secondary" ngbTooltip="Upper-body exercises may precipitate angina more readily than lower-body exercises because of a higher press or response." >i</span></label>                 
+                  <div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" name="" type="radio" name="exeRadios" id="exeRadio1" value="1">
+                      <label class="custom-control-label" for="exeRadio1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input class="custom-control-input" name="" type="radio" name="exeRadios" id="exeRadio2" value="0" checked>
+                      <label class="custom-control-label" for="exeRadio2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>Depression induced by exercise
+                      <span class="badge badge-pill badge-secondary" ngbTooltip="Depression manifests physically by causing disturbed sleep and reduced energy." placement="right">i</span>
+                  </label>
+                  <input type="text" name="" class="form-control" placeholder="0-10" value="">
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>Slope of the peak exercise
+                      <span class="badge badge-pill badge-secondary" ngbTooltip="Slope of the peak exercise" >i</span>
+                  </label>
+                  <input type="text" class="form-control" name="" placeholder="0-10" value="">
+                </div>
+              </div>
+
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                  <label>Vessels coloured by flourosopy
+                      <span class="badge badge-pill badge-secondary" ngbTooltip="Angiography or arteriography is a medical imaging technique used to visualize the inside, or lumen, of blood vessels and organs of the body, with particular interest in the arteries, veins, and the heart chambers. This is traditionally done by injecting a radio-opaque contrast agent into the blood vessel and imaging using X-ray based techniques such as fluoroscopy." placement="left">i</span>
+                  </label>
+                  <input type="text" class="form-control" name="" placeholder="0-3" value="">
+                </div>
+              </div>
+            </div>
+
+            <!-- 4th row -->
+            <div class="row">
+              <div class="col-md-3 pr-4">
+                <div class="form-group">
+                    <label>Thalassemia level
+                        <!-- TODO: Add Tooltip for the Thalassemia Level -->
+                        <span class="badge badge-pill badge-secondary" ngbTooltip="Thalassemia is a blood disorder" >i</span>
+                    </label>
+                  <input type="text" class="form-control" name="" placeholder="1-3"
+                    value="">
+                </div>
+              </div>
+
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn btn-info">Calculate Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+<!-- ================================= Modal HTML and Styles Start ================================= -->
+
+<!-- Modal Styles -->
+<!-- Author: Anshu, Date: April 17, 20 -->
+<style>
+  .result-image {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .result-message-text {
+    color: #00D68D;
+    text-align: center;
+    font-weight: bold;
+    padding: 30px 0px;
+  }
+
+  .danger-tips-title {
+    text-align: center;
+  }
+
+  .result-message-text .danger-message {
+    font-weight: bold;
+    color: #e95e38;
+    padding: 20px 0px;
+  }
+
+  .danger-tips-msg {
+    border-left: 0.5px solid rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .result-danger-message i {
+    font-size: 100px;
+    color: #e95e38;
+  }
+
+  .result-success-message i{
+    font-size: 200px; 
+    color:#00D68D;
+  }
+
+  .danger-type-msg {
+    text-align: center;
+  }
+
+  .stats-container .card {
+    padding: 10px;
+  }
+
+  .accent-primary {
+    border-top: solid 5px #5781ff;
+  }
+
+  /* .predictor-result {
+    margin-bottom: 40px;
+  } */
+
+  .appointment-btn {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+</style>
+
+<!-- HTML -->
+<!-- Author: Anshu, Date: April 17, 20 -->
+<ng-template #mymodal let-modal let-ref="dialogRef">
+  <div>
+    <div class="modal-header">
+      <h6 class="modal-title" style="margin: 0;">Heart Attack Predictor</h6>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="health-predictor-result-container modal-body">
+
+      <!-- Success Message Start, Heart OK 👍 💖 -->
+      <div class="predictor-result-success" *ngIf="isHeartOK; else dangerTemplate">
+        <div class="result-title"></div>
+        <div class="result-body">
+
+          <div class="predictor-result">
+            <div class="result-message result-success-message" style="text-align: center;">
+              <!-- <img src="../../assets/img/heart-ok.png" alt="" class="result-image"> -->
+              <i class="fas fa-check-circle"></i>
+              <div class="result-message-text">
+                Congratulations! You are safe.
+              </div>
+            </div>
+          </div>
+
+          <div class="card-row row stats-container">
+
+            <div class="card-col col-lg-6">
+              <div class="card accent-primary">
+                <div style="text-align: center;">
+                  Cholesterol
+                </div>
+                <hr />
+                <div style="text-align: center;">
+                  174
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="card accent-primary">
+                <div style="text-align: center;">
+                  Blood Sugar
+                </div>
+                <hr />
+                <div>
+                  <div style="text-align: center;">
+                    120
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Success Message End 🙂 -->
+
+      <!-- Danger Message Start, Heart not OK 💔 -->
+      <ng-template #dangerTemplate>
+        <div class="predictor-result-danger">
+          <div class="result-title"></div>
+          <div class="result-body">
+            <div class="predictor-result">
+              <div class="result-message result-danger-message" style="text-align: center;">
+
+                <i class="fas fa-exclamation-triangle"></i>
+
+                <div class="result-message-text">
+                  <div class="danger-message">
+                    <span> We suggest you to have a consultation with a cardiologist at the earliest.</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="appointment-btn">
+              <!-- TODO: Add a button below to Book and Appointment with Doctor 👨‍⚕️👩‍⚕️🩺-->
+            <a href="https://www.praco.com" target="_blank" class="btn btn-success"> <!--btn class of bootstrap-->
+              Book An Appointment
+              </a>
+            </div>
+
+            <div>
+              <div class="stats-container">
+
+                <!-- Cholestrol Details -->
+                <div class="card accent-primary">
+                  <div class="row">
+                    <div class="col col-lg-3">
+                      <div class="danger-type-msg">
+                        Cholesterol
+                      </div>
+                    </div>
+                    <div class="col col-lg-9">
+                      <div class="danger-tips-title">
+                        Tips
+                      </div>
+                      <div class="danger-tips-msg">
+                        High Blood Cholesterol can be caused due to factors like smaking, an unhealthy diet and lack
+                        of exercise,
+                        as well as having an underlying condition, such as high blood pressure or diabetes.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- Blood Sugar Details -->
+                <div class="card accent-primary">
+                  <div>
+
+                    <div class="row">
+                      <div class="col col-lg-3">
+                        <div class="danger-tips-title">
+                          Blood Sugar
+                        </div>
+                      </div>
+                      <div class="col col-lg-9">
+                        <div class="danger-tips-title">
+                          Tips
+                        </div>
+                        <div class="danger-tips-msg">
+                          Carbohydrates: Eating food containing too much carbohydrates, a form of sugar.
+                          Blood sugar levels in patients with diabetes can rise within hours after eating.
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-light" (click)="modal.close()">Close</button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- ================================= Modal HTML and Styles End ================================= -->

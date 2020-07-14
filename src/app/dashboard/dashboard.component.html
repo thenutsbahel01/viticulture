@@ -1,0 +1,224 @@
+<!-- Author: Sharath K M, Date: April 17, 20 -->
+<div class="panel-header panel-header-sm bg-color-panel">
+    <canvas baseChart id="bigDashboardChart"></canvas>
+               
+</div>
+<!-- TODO: Check the responsiveness -->
+<!-- Update the class to class="col-lg-4 col-md-6 col-xs-12" -->
+
+<div class="main-content">
+  <div class="row">
+    <!-- Heart Attack Reported Chart -->
+    <div class=" col-lg-4 col-md-4">
+      <div class="card card-chart">
+        <div class="card-header">
+          <!-- <h5 class="card-category">Email Statistics</h5> -->
+          <h4 class="card-title">Heart Attacks Reported</h4>
+        </div>
+        <div class="card-body">
+          <div class="chart-area">
+            <canvas baseChart id="barChartSimpleGradientsNumbers" [datasets]="lineChartGradientsNumbersData"
+              [labels]="lineChartGradientsNumbersLabels" [colors]="lineChartGradientsNumbersColors"
+              [options]="lineChartGradientsNumbersOptions" [chartType]="lineChartGradientsNumbersType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Heart Attack Predicted Chart -->
+    <div class=" col-lg-4 col-md-4">
+      <div class="card card-chart">
+        <div class="card-header">
+          <!-- <h5 class="card-category">Global Sales</h5> -->
+          <h4 class="card-title">Heart Attacks Predicted</h4>
+        </div>
+        <div class="card-body">
+          <div class="chart-area">
+            <canvas baseChart id="lineChartExample" [datasets]="lineChartData" [labels]="lineChartLabels"
+              [colors]="lineChartColors" [options]="lineChartOptions" [chartType]="lineChartType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+            </canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heart Attack Cured Chart -->
+    <div class="col-lg-2 col-md-4">
+      <div class="card card-chart">
+        <div class="card-header">
+          <!-- <h5 class="card-category">2018 Sales</h5> -->
+          <h4 class="card-title">Heart Attacks Cured</h4>
+        </div>
+        <div class="card-body">
+          <div class="chart-area">
+            <!-- <canvas id="lineChartExampleWithNumbersAndGrid"></canvas> -->
+            <canvas baseChart id="lineChartExampleWithNumbersAndGrid" [datasets]="lineChartWithNumbersAndGridData"
+              [labels]="lineChartWithNumbersAndGridLabels" [colors]="lineChartWithNumbersAndGridColors"
+              [options]="lineChartWithNumbersAndGridOptions" [chartType]="lineChartWithNumbersAndGridType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+            </canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="stats">
+            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+   <div class="row">
+    
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">          
+          <h4 class="card-title"> Total Prediction</h4>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive hidden-overflow">
+            <table class="table">
+                <thead class="text-primary-color">
+                   
+                      <th class="width-30">
+                        Day
+                      </th>                  
+                      <th class="width-30">
+                        Count
+                      </th>
+                      <th class="width-30">
+                          Comparison(in %)
+                        </th>
+                        <th class="width-35">
+                            Difference (Day Wise)
+                          </th>
+                    </thead>
+                 
+              <tbody>
+                <tr class="font-css">
+                  <td class="width-30">
+                    Sun
+                  </td>
+                  <td class="width-30">
+                    1
+                  </td>
+                  <td class="percentageCss-positive width-30">
+                      <span class="caret up"></span> 10%
+                  </td>
+                  <td class="width-35">
+                      <!-- <span>Sat </span><span class="blackBarStrip"></span>                    
+                          <span class="greenBarStrip"></span><span>Sun  </span>                    -->
+                    <span>Sat <span class="normal-color"> 10 </span>  Sun  <span class="green-color"> 9 </span></span>
+                  </td>
+                </tr>
+                <tr class="font-css">
+                  <td class="width-30">
+                    Sat
+                  </td>
+                  <td class="width-30">
+                    2
+                  </td>
+                  <td class="percentageCss-positive width-30">
+                      <span class="caret up"></span> 8%
+                  </td>
+                  <td class="width-35">                      
+                      <span>Fri  <span class="normal-color"> 20 </span> Sat <span class="green-color"> 18 </span></span>
+                  </td>
+                </tr>
+                <tr class="font-css">
+                  <td class="width-30">
+                    Fri
+                  </td>
+                  <td class="width-30">
+                    3
+                  </td>
+                  <td class="percentageCss-negative width-30">
+                      <span class="caret down"></span> 10%
+                  </td>
+                  <td class="width-35">
+                      
+                      <span>Thu <span class="normal-color"> 30 </span> Fri <span class="red-color"> 33  </span></span>
+                  </td>
+                </tr>
+                <tr class="font-css">
+                  <td class="width-30">
+                    Thu
+                  </td>
+                  <td class="width-30">
+                    3
+                  </td>
+                  <td class="percentageCss-positive width-30">
+                      <span class="caret up"></span> 14%
+                  </td>
+                  <td class="width-35">
+                      
+                      <span>Wed <span class="normal-color"> 22 </span> Thu <span class="green-color"> 19  </span></span>
+                  </td>
+                </tr>
+                <tr class="font-css">
+                  <td class="width-30">
+                    Wed
+                  </td>
+                  <td class="width-30">
+                    1
+                  </td>
+                  <td class="percentageCss-positive width-30">
+                      <span class="caret up"></span> 3%
+                  </td>
+                  <td class="width-35">
+                      
+                      <span>Tue <span class="normal-color"> 33 </span> Wed <span class="green-color"> 32 </span></span>
+                  </td>
+                </tr>
+                <tr class="font-css">
+                    <td class="width-30">
+                      Tue
+                    </td>
+                    <td class="width-30">
+                      2
+                    </td>
+                    <td class="percentageCss-positive width-30">
+                        <span class="caret up"></span> 6%
+                    </td>
+                    <td class="width-35">
+                        
+                        <span>Mon <span class="normal-color"> 35 </span> Tue <span class="green-color"> 33 </span></span>
+                    </td>
+                  </tr>
+                  <tr class="font-css">
+                      <td class="width-30">
+                        Mon
+                      </td>
+                      <td class="width-30">
+                        1
+                      </td>
+                      <td class="percentageCss-positive width-30">
+                          <span class="caret up"></span> 8%
+                      </td>
+                      <td class="width-35">                          
+                          <span>Sun <span class="normal-color"> 10 </span> Mon <span class="green-color"> 9 </span></span>
+                      </td>
+                    </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

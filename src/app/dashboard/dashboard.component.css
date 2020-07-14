@@ -1,0 +1,96 @@
+/* Author: Sharath K M, Date: April 17, 20 */
+.percentageCss-positive{
+    color: #00d68f !important;
+    font-weight: bold !important;
+}
+
+.percentageCss-negative{
+    color: #ff3d71 !important;
+    font-weight: bold !important;
+}
+
+.green-color{
+    color: #00d68f !important;
+    font-size: larger;
+    margin-left: 1%;
+}
+
+.red-color{
+    color: #ff3d71 !important; 
+    font-size: larger;
+    margin-left: 1%;
+}
+
+.normal-color{
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 1%;
+    margin-right: 7%;
+}
+
+.font-css{
+    color: #192038;
+    font-family: Open Sans,sans-serif;
+    /* font-size: .9375rem; */
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: larger;
+}
+
+.hidden-overflow{
+    overflow: hidden;
+}
+
+.width-30{
+    width: 25% !important;
+}
+
+.width-35{
+    width: 35% !important;
+}
+
+
+.width-25{
+    width: 25% !important;
+}
+
+.blackBarStrip{
+    width: 1%;
+    height: 4.5%;
+    border-style: solid;
+    border-color: #2d352f;
+    background-color: #2d352f;
+    position: absolute;
+    margin-left: 0.5%;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: 6px solid transparent;
+    
+}
+.caret.down{
+    border-top-color: #ff3d71 !important;
+    margin-bottom: -3%;
+}
+.caret.up{
+    border-bottom-color: #00d68f !important;
+    margin-top: -3%;
+}
+
+.greenBarStrip{
+    width: 1%;
+    height: 4.5%;
+    border-style: solid;
+    border-color: #00d68f;
+    background-color: #00d68f;
+    position: absolute;
+    margin-left: 0.5%;
+}
+
+
+.text-primary-color{
+    color: #5781ff !important;
+}
